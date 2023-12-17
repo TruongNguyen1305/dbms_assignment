@@ -31,16 +31,16 @@ const Contact = () => {
                 ></ion-icon>
                 <p className="font-bold ml-2 sm:ml-4">
                   Sneakers Company,{" "}
-                  <span className="font-normal">Victoria Island, Lagos</span>
+                  <span className="font-normal">Ho Chi Minh, Viet Nam</span>
                 </p>
               </li>
               <li className="w-full flex items-center mb-4">
                 <ion-icon name="call" class="text-very-dark-blue"></ion-icon>
-                <p className="ml-2 sm:ml-4">(123)-456-778</p>
+                <p className="ml-2 sm:ml-4">(123)-456-789</p>
               </li>
               <li className="w-full flex items-center mb-4">
                 <ion-icon name="mail" class="text-very-dark-blue"></ion-icon>
-                <p className="ml-2 sm:ml-4">hikma@sneakerscompany.com</p>
+                <p className="ml-2 sm:ml-4">dbms@sneakerscompany.com</p>
               </li>
             </ul>
           </div>

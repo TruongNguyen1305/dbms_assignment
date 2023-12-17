@@ -96,8 +96,6 @@ router.post(
                 details: true
             }
         })
-
-        console.log(updatedCart)
         
         let newOrder = await db.order.create({
             data: {

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { deleteItem, cartDisplay } from "../redux/reducers/cartSlice";
@@ -6,6 +6,8 @@ import { useForm } from "react-hook-form";
 import StripePay from "../components/StripePay";
 import { createOrder } from "../redux/reducers/orderSlice";
 import Loading from "../components/Loading";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Checkout = () => {
   document.title = "Checkout Page"
@@ -20,6 +22,7 @@ const Checkout = () => {
   const { addresses } = useSelector((state) => state.address);
   const [formData, setFormData] = useState("");
   const [disabled, setDisabled] = useState(false);
+  const toastId = useRef(null);
 
   useEffect(() => {
     dispatch(cartDisplay(false));
@@ -50,6 +53,16 @@ const Checkout = () => {
             : addresses[0],
       })
     );
+    toast('Create order success', {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: true,
+      theme: "light",
+    });
   }
 
   return (
